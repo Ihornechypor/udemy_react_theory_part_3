@@ -1,9 +1,10 @@
 import React, {Component} from 'react'
 import './App.scss'
-import {Route, NavLink, Switch} from 'react-router-dom'
+import {Route, NavLink, Switch, Redirect} from 'react-router-dom'
 import About from './About/About'
 import Cars from './Cars/Cars'
 import CarDetail from './CarDetail/CarDetail'
+import h1 from "eslint-plugin-jsx-a11y/lib/util/implicitRoles/h1";
 
 class App extends Component {
   render() {
@@ -40,6 +41,8 @@ class App extends Component {
             <Route path="/about" component={About}/>
             <Route path="/cars/:name" component={CarDetail}/>
             <Route path="/cars" component={Cars}/>
+            <Redirect to={'/'}/>
+            {/*<Route render={() => <h1 style={{color:'red', textAlign: 'center'}}>404</h1>}/>*/}
         </Switch>
 
       </div>
