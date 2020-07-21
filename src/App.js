@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import './App.scss'
+import {Route} from 'react-router-dom'
 import About from './About/About'
 import Cars from './Cars/Cars'
 
@@ -10,19 +11,24 @@ class App extends Component {
       <div>
         <nav className="nav">
           <ul>
-            <li>
-              <a href="/">Home</a>
-            </li>
-            <li>
-              <a href="/about">About</a>
-            </li>
+                <li>
+                  <a href="/">Home</a>
+                </li>
+                <li>
+                  <a href="/about">About</a>
+                </li>
+              <li>
+                  <a href="/cars">cars</a>
+              </li>
           </ul>
         </nav>
 
         <hr/>
-        <About />
 
-        <Cars />
+
+        <Route path="/" exact render={() => <h1>home page</h1>}/>
+        <Route path="/about" component={About}/>
+        <Route path="/cars" component={Cars}/>
       </div>
     );
   }
