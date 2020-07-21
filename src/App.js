@@ -53,10 +53,7 @@ class App extends Component {
                 <hr/>
                 <Switch>
                     <Route path="/" exact render={() => <h1>home page</h1>}/>
-                    {
-                        this.state.isLoggedIn ? <Route path="/about" component={About}/> : false
-                    }
-
+                    {this.state.isLoggedIn ? <Route path="/about" component={About}/> : false}
                     <Route path="/cars/:name" component={CarDetail}/>
                     <Route path="/cars" component={Cars}/>
                     <Redirect to={'/'}/>
